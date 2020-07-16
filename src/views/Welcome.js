@@ -4,15 +4,16 @@ import axios from 'axios'
 import ResultsContext from '../contexts/ResultsContext'
 
 const Welcome = () => {
-  const { results, setResults } = useContext(ResultsContext)
+  const { setResults } = useContext(ResultsContext)
 
   const standardQuery = () => {
-    axios.get('http://www.boredapi.com/api/activity/')
-      .then(() => {
-        
+    axios.get('https://www.boredapi.com/api/activity/')
+      .then(res => {
+        // console.log(res.data)
+        setResults(res.data)
       })
-      .catch(() => {
-
+      .catch(err => {
+        console.log('error: ', err)
       })
   }
 

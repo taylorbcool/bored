@@ -4,9 +4,12 @@ import { Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Welcome from "./views/Welcome";
 import Types from "./views/Types";
+import Participants from "./views/Participants";
 import Results from "./views/Results";
 import SearchContext from "./contexts/SearchContext";
 import ResultsContext from "./contexts/ResultsContext";
+import Price from "./views/Price";
+import Accessibility from "./views/Accessibility";
 
 function App() {
   const possibleSearches = {
@@ -22,7 +25,7 @@ function App() {
       "Busywork",
     ],
     participants: ["1", "2", "3", "4", "5+"],
-    price: [
+    prices: [
       "Free",
       "Inexpensive",
       "Moderately Expensive",
@@ -48,7 +51,10 @@ function App() {
           <Switch>
             <Route exact path="/" component={Welcome} />
             <Route path="/types" component={Types} />
+            <Route path="/participants" component={Participants} />
             <Route path="/results" component={Results} />
+            <Route path="/price" component={Price} />
+            <Route path='/difficulty' component={Accessibility} />
           </Switch>
         </div>
       </ResultsContext.Provider>

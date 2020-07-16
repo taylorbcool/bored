@@ -17,19 +17,19 @@ const Navbar = () => {
             Types
           </button>
         </Link>
-        <Link to='/'>
+        <Link to='/participants'>
           <button className='nav-btn'>
             Participants
           </button>
         </Link>
-        <Link to='/'>
+        <Link to='/price'>
           <button className='nav-btn'>
             Price
           </button>
         </Link>
-        <Link to='/'>
+        <Link to='/difficulty'>
           <button className='nav-btn'>
-            Accessibility
+            Difficulty
           </button>
         </Link>
       </div>

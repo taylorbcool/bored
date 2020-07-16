@@ -1,15 +1,15 @@
 import React, { useContext } from 'react'
 import axios from 'axios'
 import SearchContext from '../contexts/SearchContext'
-import TypeButton from '../components/TypeButton'
+import ParticipantButton from '../components/ParticipantButton'
 import ResultsContext from '../contexts/ResultsContext'
 
 const Types = () => {
   const { possibleSearches } = useContext(SearchContext)
   const { setResults } = useContext(ResultsContext)
   
-  const typeQuery = (typeClicked) => {
-    axios.get(`http://www.boredapi.com/api/activity?type=${typeClicked}`)
+  const partQuery = (partClicked) => {
+    axios.get(`http://www.boredapi.com/api/activity?participants=${partClicked === '5+' ? 5 : partClicked}`)
       .then(res => {
         setResults(res.data)
       })
@@ -21,14 +21,14 @@ const Types = () => {
   return(
     <div className='container-col'>
       <h1 className='page-title'>
-        Types
+        Participants
       </h1>
       <p className='page-text'>
-        What type of activity would you like for me to suggest?
+        How many people are there to entertain?
       </p>
       <div className='options-container'>
-        {possibleSearches.types.map(type => (
-          <TypeButton key={type} type={type} typeQuery={typeQuery} />
+        {possibleSearches.participants.map(number => (
+          <ParticipantButton key={number} participants={number} partQuery={partQuery} />
         ))}
       </div>
     </div>
