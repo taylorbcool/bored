@@ -17,7 +17,7 @@ const Accessibility = () => {
   }
   
   const accessQuery = (accessClicked) => {
-    axios.get(`http://www.boredapi.com/api/activity?minaccessibility=${accessTable[accessClicked][0]}&maxaccessibility=${accessTable[accessClicked][1]}`)
+    axios.get(`https://www.boredapi.com/api/activity?minaccessibility=${accessTable[accessClicked][0]}&maxaccessibility=${accessTable[accessClicked][1]}`)
       .then(res => {
         setResults(res.data)
       })

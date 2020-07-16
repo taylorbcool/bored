@@ -17,7 +17,7 @@ const Price = () => {
   }
   
   const priceQuery = (priceClicked) => {
-    axios.get(`http://www.boredapi.com/api/activity?minprice=${priceTable[priceClicked][0]}&maxprice=${priceTable[priceClicked][1]}`)
+    axios.get(`https://www.boredapi.com/api/activity?minprice=${priceTable[priceClicked][0]}&maxprice=${priceTable[priceClicked][1]}`)
       .then(res => {
         setResults(res.data)
       })

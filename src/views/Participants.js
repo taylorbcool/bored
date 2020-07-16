@@ -9,7 +9,7 @@ const Types = () => {
   const { setResults } = useContext(ResultsContext)
   
   const partQuery = (partClicked) => {
-    axios.get(`http://www.boredapi.com/api/activity?participants=${partClicked === '5+' ? 5 : partClicked}`)
+    axios.get(`https://www.boredapi.com/api/activity?participants=${partClicked === '5+' ? 5 : partClicked}`)
       .then(res => {
         setResults(res.data)
       })

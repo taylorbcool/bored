@@ -9,7 +9,7 @@ const Types = () => {
   const { setResults } = useContext(ResultsContext)
   
   const typeQuery = (typeClicked) => {
-    axios.get(`http://www.boredapi.com/api/activity?type=${typeClicked}`)
+    axios.get(`https://www.boredapi.com/api/activity?type=${typeClicked}`)
       .then(res => {
         setResults(res.data)
       })
