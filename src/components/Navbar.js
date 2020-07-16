@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { IoIosArrowBack } from 'react-icons/io'
 
-const Navbar = props => {
+const Navbar = () => {
 
   return (
     <div className='container'>

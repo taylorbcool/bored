@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import ResultsContext from '../contexts/ResultsContext'
 
 const Welcome = () => {
+  const { results, setResults } = useContext(ResultsContext)
+
+  const standardQuery = () => {
+    axios.get('http://www.boredapi.com/api/activity/')
+      .then(() => {
+        
+      })
+      .catch(() => {
+
+      })
+  }
+
   return(
     <div className='container-col'>
       <h1 className='page-title'>
@@ -10,8 +24,8 @@ const Welcome = () => {
       <p className='page-text'>
         I built this tool to help you find something to do with your time! Press the button below to generate a random activity, or select a search method above.
       </p>
-      <Link to='/types'>
-        <button className='option-button'>
+      <Link to='/results'>
+        <button className='option-button' onClick={standardQuery}>
           Find
         </button>
       </Link>
